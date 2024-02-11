@@ -17,8 +17,13 @@ app.post("/aiCompletion", async (req, res) => {
     // const chunkTime = (Date.now() - starttime) / 1000;
     // process.stdout.write(part.choices[0]?.delta || "");
     // console.log("chunk time:", chunkTime);
+    const resData = part.choices[0]?.delta.content
+
     res.write(part.choices[0]?.delta.content || "");
+    console.log(part.choices[0]?.delta.content || "");
   }
+
+
   res.end();
 });
 

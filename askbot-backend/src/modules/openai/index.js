@@ -1,8 +1,11 @@
 import OpenAI from "openai";
+import dotenv from "dotenv"
+
+dotenv.config();
 
 const client = new OpenAI({
-  organization: "<>",
-  apiKey: "<>",
+  organization: "Personal",
+  apiKey: process.env.OPEN_AI_API,
 });
 
 const systemMessage = {
